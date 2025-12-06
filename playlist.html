@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир музыки - Мой плейлист</title>
+    <link rel="icon" href="favicon_mus.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; color: inherit;">
+                <img src="logo.png" alt="Логотип Мир музыки">
+                <h1 id="main-heading">Мир музыки</h1>
+            </a>
+        </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-button">
+            <span class="menu-icon"></span>
+        </label>
+        <nav>
+            <label for="menu-toggle" class="close-menu-button">
+                <span class="close-icon"></span>
+            </label>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="instruments.html">Инструменты</a></li>
+                <li><a href="theory.html">Теория и История</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="feedback.html">Обратная связь</a></li>
+                <li><a href="register.html" class="register-link">Регистрация</a></li>
+                <li><a href="login.html" class="login-link-header">Вход</a></li>
+                <div class="notifications-dropdown">
+                    <div class="notification-icon">🔔</div>
+                    <span class="notification-count">1</span>
+                    <div class="dropdown-content">
+                        <h3>Уведомления</h3>
+                        <ul>
+                            <li>
+                                <div class="notification-item">
+                                    <span class="notification-icon-small">🎉</span>
+                                    <span class="notification-text">Добро пожаловать в "Мир музыки"!</span>
+                                    <span class="notification-time">Только что</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="playlist-manager">
+            <h2>Управление прослушанными треками</h2>
+            <p>Добавляйте треки, которые вы послушали, формируйте историю и управляйте списком.</p>
+
+            <div class="playlist-controls">
+                <div class="input-wrapper">
+                    <input type="text" id="trackInput" placeholder="Введите название трека и исполнителя">
+                    <button id="addBtn" class="action-btn add">Добавить</button>
+                </div>
+                <div class="buttons-wrapper">
+                    <button id="clearBtn" class="action-btn clear">Очистить историю</button>
+                </div>
+            </div>
+
+            <div class="tools-panel">
+                <div class="tool-section filter-section">
+                    <h4>Фильтр по прослушиваниям:</h4>
+                    <div class="filter-inputs">
+                        <input type="number" id="filterMin" placeholder="От..." min="0">
+                        <input type="number" id="filterMax" placeholder="До..." min="0">
+                        <button id="filterBtn" class="tool-btn">Применить</button>
+                        <button id="resetFilterBtn" class="tool-btn reset">Сброс</button>
+                    </div>
+                </div>
+
+                <div class="tool-section sort-section">
+                    <h4>Сортировка:</h4>
+                    <div class="sort-buttons">
+                        <button id="sortAscBtn" class="tool-btn">По возрастанию ⬆</button>
+                        <button id="sortDescBtn" class="tool-btn">По убыванию ⬇</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playlist-container">
+                <div class="list-header">
+                    <h3>Ваш плейлист (<span id="countDisplay">0</span> треков)</h3>
+                    <div class="total-plays">
+                        Всего прослушиваний: <span id="totalPlaysDisplay">0</span> 🎧
+                    </div>
+                </div>
+                <ul id="trackList" class="track-list">
+                    <li class="empty-message">Список пока пуст...</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="user-list-section">
+            <h2>Долгий ящик 📦</h2>
+            <p>Нажмите кнопку, чтобы составить свой список песен/групп, которые вы планируете послушать в будущем.</p>
+            <button id="createListBtn" class = "action-btn cr">Создать список</button>
+            <ul id="user-generated-list" style="margin-top: 20px; background: white; padding: 20px 40px; border-radius: 4px;">
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content-grid">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Добро пожаловать в Мир Музыки – ваш портал в абсолютно иную вселенную, где всё понятно без слов. Мы стремимся собрать самую актуальную и интересную информацию о музыкальных новинках, классике и событиях.</p>
+                <ul>
+                    <li><a href="register.html">Присоединиться к нам</a></li>
+                    <li><a href="login.html">Вы уже "музыкарик"</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Полезные ссылки</h3>
+                <ul>
+                    <li><a href="#main-heading">Вернуться к началу страницы</a></li>
+                    <li><a href="Политика конфиденциальности.pdf" download>Политика конфиденциальности</a></li>
+                    <li><a href="Пользовательское соглашение.pdf" download=>Пользовательское соглашение</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p>Если у вас есть вопросы по сайту, свяжитесь с нами:</p>
+                <p>Телефон: <a href="tel:+78001234567">+7 (800) 123-45-67</a></p>
+                <p>Email: <a href="mailto:info@music-world.ru">info@music-world.ru</a></p>
+                <address>
+                    Разработчики сайта: Музыкальная группа "Тяжело и Неказисто" <br>
+                    Адрес: г. Пушкина, ул. Колотушкина, д. 13 <br>
+                </address>
+            </div>
+        </div>
+        <div class="social-buttons-container">
+            <a href="https://vk.com/jjordan13" target="_blank" class="social-button vk">
+                <img src="vk_icon.png" alt="ВКонтакте">
+            </a>
+            <a href="https://t.me/jjordannotmichael" target="_blank" class="social-button tg">
+                <img src="telegram_icon.png" alt="Telegram">
+            </a>
+            <a href="https://www.youtube.com/@jjordan13" target="_blank" class="social-button yt">
+                <img src="youtube_icon.png" alt="YouTube">
+            </a>
+        </div>
+        <p class="copyright">&copy; 2025 Мир музыки. Прав у нас нет.</p>
+    </footer>
+
+    <script src="playlist.js"></script>
+    <script src="notifications.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир музыки - Инструменты</title>
+
+    <link rel="icon" href="favicon_mus.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Логотип Мир музыки" id="music-control" style="cursor: pointer;" title="Нажмите, чтобы включить/выключить музыку">
+            <h1 id="main-heading">Мир музыки</h1>
+        </div>
+        <audio id="bg-music" src="music1.mp3" loop></audio>
+        <!-- бургер-меню -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-button">
+            <span class="menu-icon"></span>
+        </label>
+
+        <!-- навигация -->
+        <nav>
+            <label for="menu-toggle" class="close-menu-button">
+                <span class="close-icon"></span>
+            </label>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="theory.html">Теория и История</a></li>
+                <li><a href="playlist.html">Мой плейлист</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="feedback.html">Обратная связь</a></li>
+                <li><a href="register.html" class="register-link">Регистрация</a></li>
+                <li><a href="login.html" class="login-link-header">Вход</a></li>
+                <div class="notifications-dropdown">
+                    <div class="notification-icon">🔔</div>
+                    <span class="notification-count">1</span>
+                    <div class="dropdown-content">
+                        <h3>Уведомления</h3>
+                        <ul>
+                            <li>
+                                <div class="notification-item">
+                                    <span class="notification-icon-small">🎉</span>
+                                    <span class="notification-text">Добро пожаловать в "Мир музыки"!</span>
+                                    <span class="notification-time">Только что</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class = "content-wrapper">
+            <div class="main-content">
+            <!-- муз. инструменты -->
+            <section id="instruments">
+                <h2>Откуда же берётся музыка?</h2>
+                <p align="justify">Музыкальные инструменты — это инструменты, предназначенные для извлечения ритмически организованных и
+                    фиксированных по высоте звуков или чётко регулируемого ритма. Они могут быть струнными, духовыми, ударными или клавишными.
+                    Первые музыкальные инструменты появились ещё в доисторические времена. Археологические находки свидетельствуют о том,
+                    что первобытные люди использовали простые ударные, духовые и струнные инструменты из натуральных материалов — дерева, костей и камней.
+                    Эти инструменты служили не только для музицирования, но и для ритуальных целей, а также для общения на расстоянии.
+                    Ниже представлена общая информация о разных группах инструментов.</p>
+            </section>
+
+            
+
+            <!-- карта инструментов -->
+            <section id="instrument-map">
+                <h2>Музыкальные инструменты мира</h2>
+                <p>Нажми на области изображения, чтобы узнать больше о разных типах инструментов:</p>
+                <img src="classic_mus_pic.jpg" width="600" height="500" alt="Музыкальные инструменты" usemap="#instrumentmap">
+                <map name="instrumentmap">
+                    <area shape="circle" coords="50,250,80" href="https://ru.wiktionary.org/wiki/Категория:Духовые_музыкальные_инструменты/ru" alt="Духовые инструменты" target="_blank">
+                    <area shape="rect" coords="500,100,600,300" href="https://ru.wiktionary.org/wiki/Категория:Струнные_музыкальные_инструменты/ru" alt="Струнные инструменты" target="_blank">
+                    <area shape="poly" coords="158,235,165,345,429,469,497,326,445,213" href="https://ru.wiktionary.org/wiki/Категория:Клавишные_музыкальные_инструменты/ru" alt="Клавишные инструменты" target="_blank">
+                </map>
+            </section>
+
+            <!-- галерея инструментов -->
+            <section id="instrument-gallery">
+                <h2>Галерея музыкальных инструментов</h2>
+                <p>Нажми на картинку и послушай, как звучит тот или иной инструмент!</p>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="drums.jpg" alt="Барабаны" data-audio="drums.mp3" style="cursor: pointer;">
+                        <div class="item-overlay">
+                            <p>Барабаны</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="piano.jpg" alt="Пианино" data-audio="piano.mp3" style="cursor: pointer;">
+                        <div class="item-overlay">
+                            <p>Рояль</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="guitar.jpg" alt="Электрогитара" data-audio="guitar.mp3" style="cursor: pointer;">
+                        <div class="item-overlay">
+                            <p>Электрогитара</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="harp.jpg" alt="Арфа" data-audio="harp.mp3" style="cursor: pointer;">
+                        <div class="item-overlay">
+                            <p>Арфа</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="saxophone.jpg" alt="Саксофон" data-audio="saxophone.mp3" style="cursor: pointer;">
+                        <div class="item-overlay">
+                            <p>Саксофон</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="violin.jpg" alt="Скрипка" data-audio="violin.mp3" style="cursor: pointer;">
+                        <div class="item-overlay">
+                            <p>Скрипка</p>
+                        </div>
+                    </div>
+                </div>
+                <p>И это только мизерная часть существующих на свете музыкальных инструментов!</p>
+            </section>
+            </div>
+            <aside>
+                <section id="circle-border-cards">
+                    <h2>Типы музыкальных инструментов</h2>
+                    <div class="circle-cards-container">
+                        <div class="circle-card">
+                            <div class="card-inner">
+                                <div class="card-icon">🎻</div>
+                                <h3>Струнные</h3>
+                                <p>В подобных инструментах источником звука являются натянутые струны.
+                                    По способу звукоизвлечения делятся на смычковые, щипковые и ударные.</p>
+                            </div>
+                        </div>
+                        <div class="circle-card">
+                            <div class="card-inner">
+                                <div class="card-icon">🎺</div>
+                                <h3>Духовые</h3>
+                                <p>В этой категории инструментов звук создаётся за счёт вибрации воздуха внутри трубки.
+                                    Музыкант направляет воздушный поток в мундштук или отверстие и,
+                                    управляя этим потоком с помощью дыхания, артикуляции и положения пальцев,
+                                    добивается нужной высоты звука и тембра.</p>
+                            </div>
+                        </div>
+                        <div class="circle-card">
+                            <div class="card-inner">
+                                <div class="card-icon">🥁</div>
+                                <h3>Ударные</h3>
+                                <p>Исходя из названия, это группа инструментов, звук из которых извлекается путём удара по звучащему телу.
+                                    По своей природе ударные не являются мелодическими, их главное назначение —
+                                    подчёркивать ритм, усиливать общую звучность оркестра и дополнять её различными эффектами.</p>
+                            </div>
+                        </div>
+                        <div class="circle-card">
+                            <div class="card-inner">
+                                <div class="card-icon">🎹</div>
+                                <h3>Клавишные</h3>
+                                <p>Данная группа инструментов характеризуется наличием клавиатуры.
+                                    Звук извлекается нажатием клавиш, которые являются частью механизма,
+                                    связанного с разными системами: рычагами, мехами, клапанами.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                <h3>Хочешь узнать больше? <a href="https://ru.ruwiki.ru/wiki/Музыкальные_инструменты">Тык сюда!</a></h3>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content-grid">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Добро пожаловать в Мир Музыки – ваш портал в абсолютно иную вселенную, где всё понятно без слов. Мы стремимся собрать самую актуальную и интересную информацию о музыкальных новинках, классике и событиях.</p>
+                <ul>
+                    <li><a href="register.html">Присоединиться к нам</a></li>
+                    <li><a href="login.html">Вы уже "музыкарик"</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Полезные ссылки</h3>
+                <ul>
+                    <li><a href="#main-heading">Вернуться к началу страницы</a></li>
+                    <li><a href="Политика конфиденциальности.pdf" download>Политика конфиденциальности</a></li>
+                    <li><a href="Пользовательское соглашение.pdf" download=>Пользовательское соглашение</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p>Если у вас есть вопросы по сайту, свяжитесь с нами:</p>
+                <p>Телефон: <a href="tel:+78001234567">+7 (800) 123-45-67</a></p>
+                <p>Email: <a href="mailto:info@music-world.ru">info@music-world.ru</a></p>
+                <address>
+                    Разработчики сайта: Музыкальная группа "Тяжело и Неказисто" <br>
+                    Адрес: г. Пушкина, ул. Колотушкина, д. 13 <br>
+                </address>
+            </div>
+        </div>
+
+        <div class="social-buttons-container">
+            <a href="https://vk.com/jjordan13" target="_blank" class="social-button vk">
+                <img src="vk_icon.png" alt="ВКонтакте">
+            </a>
+            <a href="https://t.me/jjordannotmichael" target="_blank" class="social-button tg">
+                <img src="telegram_icon.png" alt="Telegram">
+            </a>
+            <a href="https://www.youtube.com/@jjordan13" target="_blank" class="social-button yt">
+                <img src="youtube_icon.png" alt="YouTube">
+            </a>
+        </div>
+
+        <p class="copyright">&copy; 2025 Мир музыки. Прав у нас нет.</p>
+    </footer>
+
+    <div class="fixed-element">
+        <a href="#main-heading">△</a>
+    </div>
+
+    <script src="notifications.js"></script>
+    <script src="music.js"></script>
+</body>
+</html>
