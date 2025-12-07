@@ -435,7 +435,6 @@ article h3 {
     display: table;
     clear: both;
 }
-/* для десктоп возвращаем float */
 @media (min-width: 768px) {
     .float-left {
     float: left;
@@ -455,7 +454,6 @@ article h3 {
         clear: both;
     }
 }
-
 .fixed-element {
     position: fixed;
     bottom:20px;
@@ -623,7 +621,6 @@ address {
     z-index: 1;
 }
 
-/* Селекторы */
 main a {
     font-weight: bold;
 }
@@ -638,7 +635,6 @@ img[usemap] {
     border: 4px solid #cc0000;
 }
 
-/*форма*/
 .feedback-form {
     background-color: #ffffff;
     padding: 3em;
@@ -859,7 +855,6 @@ img[usemap] {
     }
 }
 
-.map-container,
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -870,7 +865,6 @@ img[usemap] {
     margin-bottom: 2em;
     border-radius: 8px;
 }
-.map-container iframe,
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -880,6 +874,7 @@ img[usemap] {
     border: 0;
     border-radius: 8px;
 }
+
 header nav ul li a {
     width: auto;
     padding: 5px 10px;
@@ -892,7 +887,6 @@ header nav ul li a {
     flex-shrink: 0;
 }
 
-/* для адаптивной галереи */
 #instrument-gallery h2 {
     text-align: relative;
 }
@@ -975,142 +969,6 @@ header nav ul li a {
 .gallery-item:nth-child(6) {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
-}
-
-
-/* для кнопок */
-#custom-buttons {
-    text-align: center;
-    margin-top: 3em;
-}
-.button-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 30px;
-}
-.btn {
-    background-color: #cc0000;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-}
-.btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-/* кнопка 1: подсветка слева */
-.btn-1 {
-    background-color: #c21313c0;
-}
-.btn-1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -110%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.405);
-    transition: left 0.6s ease-in-out;
-    transform: skewX(-30deg);
-}
-.btn-1:hover::before {
-    color: white;
-    left: 110%;
-}
-.btn-1:hover {
-    color: white;
-}
-/* кнопка 2: растягивающаяся рамка */
-.btn-2 {
-    background-color: #4a0000;
-    border: 4px solid #ba0000;
-    color: white;
-}
-.btn-2::before, .btn-2::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid transparent;
-    transition: all 0.4s ease-in-out;
-}
-.btn-2::before {
-    border-top-color: white;
-    border-bottom-color: white;
-    transform: scaleX(0);
-}
-.btn-2::after {
-    border-left-color: white;
-    border-right-color: white;
-    transform: scaleY(0);
-}
-.btn-2:hover::before {
-    transform: scaleX(1);
-}
-.btn-2:hover::after {
-    transform: scaleY(1);
-}
-.btn-2:hover {
-    color: white;
-    background-color: #d40000;
-}
-/* кнопка 3: пульсация */
-.btn-3 {
-    background-color: #f44336;
-    z-index: 1;
-}
-.btn-3::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.4s ease-out, height 0.4s ease-out;
-    z-index: -1;
-}
-.btn-3:hover::before {
-    width: 200%;
-    height: 200%;
-}
-.btn-3:hover {
-    color: white;
-}
-/* кнопка 4: слайд */
-.btn-4 {
-    background-color: #555555;
-    z-index: 1;
-}
-.btn-4::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ff3333;
-    transform: translateX(-100%);
-    transition: transform 0.4s ease-in-out;
-    z-index: -1;
-}
-.btn-4:hover::before {
-    transform: translateX(0);
-}
-.btn-4:hover {
-    color: white;
 }
 
 /* для уведомлений */
@@ -2539,7 +2397,7 @@ header .logo {
     background-color: #0b7dda;
 }
 
-/* --- для страницы плейлиста --- */
+/* для страницы плейлиста */
 #playlist-manager {
     max-width: 800px;
     margin: 40px auto;
@@ -2614,7 +2472,7 @@ header .logo {
     background-color: #f1f1f1;
     padding-left: 20px;
 }
-/* для иконки корзины */
+
 .delete-icon {
     cursor: pointer;
     font-size: 40px;
@@ -2648,7 +2506,6 @@ header .logo {
     transform: scale(1.1);
 }
 
-/* --- для счетчиков --- */
 .list-header {
     display: flex;
     justify-content: space-between;
@@ -2762,7 +2619,76 @@ header .logo {
 .tool-btn:hover {background-color: #5a6268;}
 .tool-btn.reset {background-color: #b81717;}
 .tool-btn.reset:hover {background-color: #961313;}
-
+@media (max-width: 768px) {
+    #playlist-manager,
+    #user-list-section {
+        margin: 10px;
+        padding: 15px;
+        width: auto;
+    }
+    .buttons-wrapper {
+        flex-wrap: wrap;
+    }
+    .action-btn {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 12px;
+    }
+    .track-item {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px 10px;
+    }
+    .track-info {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 1.1em;
+        line-height: 1.4;
+    }
+    .counter-wrapper {
+        margin-right: auto;
+        background-color: #f5f5f5;
+    }
+    .actions-group {
+        margin-left: auto;
+    }
+    .delete-icon {
+        font-size: 30px;
+        padding: 10px;
+    }
+    .tools-panel {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .tool-section {
+        width: 100%;
+    }
+    .filter-inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+    .filter-inputs input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .sort-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .tool-btn {
+        flex-grow: 1;
+        text-align: center;
+        padding: 10px;
+    }
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
 
 /* для всплывающего уведомления*/
 .notification-popup {
@@ -2803,7 +2729,6 @@ header .logo {
     }
 }
 
-
 .primitive-player {
     margin-bottom: 20px;
     text-align: center;
@@ -2819,7 +2744,10 @@ header .logo {
 }
 
 #forum-section {
-    width: auto;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 #chat-window {
     background-color: #f9f9f9;
@@ -2840,12 +2768,12 @@ header .logo {
     max-width: 70%;
     position: relative;
     animation: fadeIn 0.3s ease;
+    word-wrap: break-word;
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* Заголовок сообщения (Имя и время) */
 .msg-header {
     font-size: 0.8em;
     margin-bottom: 5px;
@@ -2858,17 +2786,15 @@ header .logo {
     margin-left: 10px;
     font-size: 0.9em;
 }
-/* Сообщения ботов (слева) */
 .bot-message {
-    align-self: flex-start; /* Прижать влево */
+    align-self: flex-start;
     background-color: #e0e0e0;
     color: #333;
     border-bottom-left-radius: 2px;
 }
-/* Сообщения пользователя (справа) */
 .user-message {
-    align-self: flex-end; /* Прижать вправо */
-    background-color: #af4c4c; /* Зеленый цвет */
+    align-self: flex-end;
+    background-color: #af4c4c;
     color: white;
     border-bottom-right-radius: 2px;
 }
@@ -2876,7 +2802,6 @@ header .logo {
     color: #e8f5e9;
     text-align: right;
 }
-/* Форма ввода */
 #chat-form {
     display: flex;
     gap: 10px;
@@ -2887,6 +2812,7 @@ header .logo {
     border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    min-width: 0;
 }
 #chat-form button {
     padding: 10px 25px;
@@ -2897,7 +2823,29 @@ header .logo {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s;
+    white-space: nowrap;
 }
 #chat-form button:hover {
     background-color: #555;
+}
+@media (max-width: 480px) {
+    #forum-section {
+        padding: 0 10px;
+    }
+    #chat-window {
+        height: 60vh;
+        padding: 10px;
+        gap: 10px;
+    }
+    .message {
+        max-width: 90%;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .msg-header {
+        font-size: 0.75em;
+    }
+    #chat-form button {
+        padding: 10px 15px;
+    }
 }
