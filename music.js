@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const music = document.getElementById('bg-music');
+    const music = document.getElementyId('bg-music');
     const logo = document.getElementById('music-control');
     music.volume = 0.07;
     const savedTime = localStorage.getItem('musicTime');
@@ -45,17 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const instrumentImages = document.querySelectorAll('.gallery-item img');
     let currentSound = null;
-
     instrumentImages.forEach(img => {
         img.addEventListener('click', function() {
             const audioFile = this.getAttribute('data-audio');
-
             if (audioFile) {
                 if (currentSound) {
                     currentSound.pause();
                     currentSound.currentTime = 0;
                 }
-
                 currentSound = new Audio(audioFile);
                 currentSound.play().catch(error => {
                     console.log("Ошибка воспроизведения (проверьте наличие файла):", error);

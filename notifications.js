@@ -2,17 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const notificationDropdown = document.querySelector('.notifications-dropdown');
     const notificationCount = document.querySelector('.notification-count');
     const notificationList = document.querySelector('.dropdown-content ul');
-
     const mockNotifications = [
         { icon: '❗', text: 'Вас упомянули в чате' },
         { icon: '✉️', text: 'Новое письмо от поддержки' },
         { icon: '🚀', text: 'Система обновлена' },
         { icon: '⚠️', text: 'Попытка входа в аккаунт' }
     ];
-
     let intervalId = null;
     let isPaused = false;
-
     function addNewNotification() {
         const randomNotif = mockNotifications[Math.floor(Math.random() * mockNotifications.length)];
         const li = document.createElement('li');
@@ -24,21 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         notificationList.insertBefore(li, notificationList.firstChild);
-
         let currentCount = parseInt(notificationCount.textContent) || 0;
         notificationCount.textContent = ++currentCount;
-
         notificationCount.style.transform = 'scale(1.3)';
         setTimeout(() => notificationCount.style.transform = 'scale(1)', 200);
-
         showNotification({ content: "Получено новое уведомление!" });
     }
-
     function startTimer() {
-        intervalId = setInterval(addNewNotification, 15000);
+        intervalId = setInterval(addNewNotification, 7000);
     }
     startTimer();
-
     function pauseDecorator(func, delay) {
         return function() {
             if (isPaused) return;
@@ -47,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const oldColor = notificationCount.style.backgroundColor;
             notificationCount.style.backgroundColor = '#888';
             showNotification({ content: "Уведомления приостановлены на 10 сек" });
-
             setTimeout(() => {
                 func();
                 isPaused = false;
@@ -56,9 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, delay);
         };
     }
-
     notificationDropdown.addEventListener('click', pauseDecorator(startTimer, 10000));
-
     function showNotification(options) {
         const notification = document.createElement('div');
         notification.className = 'notification-popup';
@@ -66,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(notification);
         setTimeout(() => {
             notification.remove();
-        }, 1500);
+        }, 10000);
     }
     window.showNotification = showNotification;
 });
