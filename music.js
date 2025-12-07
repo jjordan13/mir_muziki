@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const music = document.getElementyId('bg-music');
+    const music = document.getElementById('bg-music');
     const logo = document.getElementById('music-control');
     music.volume = 0.07;
     const savedTime = localStorage.getItem('musicTime');
