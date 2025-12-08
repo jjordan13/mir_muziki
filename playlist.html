@@ -17,11 +17,10 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; color: inherit;">
-                <img src="logo.png" alt="Логотип Мир музыки">
-                <h1 id="main-heading">Мир музыки</h1>
-            </a>
+            <img src="logo.png" alt="Логотип Мир музыки" id="music-control" style="cursor: pointer;">
+            <h1 id="main-heading">Мир музыки</h1>
         </div>
+        <audio id="bg-music" src="music1.mp3" loop></audio>
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-button">
             <span class="menu-icon"></span>
@@ -34,8 +33,8 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="instruments.html">Инструменты</a></li>
                 <li><a href="theory.html">Теория и История</a></li>
+                <li><a href="playlist.html">Мой плейлист</a></li>
                 <li><a href="forum.html">Форум</a></li>
-                <li><a href="feedback.html">Обратная связь</a></li>
                 <li><a href="register.html" class="register-link">Регистрация</a></li>
                 <li><a href="login.html" class="login-link-header">Вход</a></li>
                 <div class="notifications-dropdown">
@@ -62,7 +61,6 @@
         <section id="playlist-manager">
             <h2>Управление прослушанными треками</h2>
             <p>Добавляйте треки, которые вы послушали, формируйте историю и управляйте списком.</p>
-
             <div class="playlist-controls">
                 <div class="input-wrapper">
                     <input type="text" id="trackInput" placeholder="Введите название трека и исполнителя">
@@ -72,7 +70,6 @@
                     <button id="clearBtn" class="action-btn clear">Очистить</button>
                 </div>
             </div>
-
             <div class="tools-panel">
                 <div class="tool-section filter-section">
                     <h4>Фильтр по прослушиваниям:</h4>
@@ -83,7 +80,6 @@
                         <button id="resetFilterBtn" class="tool-btn reset">Сброс</button>
                     </div>
                 </div>
-
                 <div class="tool-section sort-section">
                     <h4>Сортировка:</h4>
                     <div class="sort-buttons">
@@ -92,7 +88,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="playlist-container">
                 <div class="list-header">
                     <h3>Ваш плейлист (<span id="countDisplay">0</span> треков)</h3>
@@ -105,21 +100,15 @@
                 </ul>
             </div>
         </section>
-
-        <section id="user-list-section">
-            <h2>Долгий ящик 📦</h2>
-            <p>Нажмите кнопку, чтобы составить свой список песен/групп, которые вы планируете послушать в будущем.</p>
-            <button id="createListBtn" class = "action-btn cr">Создать список</button>
-            <ul id="user-generated-list" style="margin-top: 20px; background: white; padding: 20px 40px; border-radius: 4px;">
-            </ul>
-        </section>
     </main>
 
     <footer>
         <div class="footer-content-grid">
             <div class="footer-column">
                 <h3>О нас</h3>
-                <p>Добро пожаловать в Мир Музыки – ваш портал в абсолютно иную вселенную, где всё понятно без слов. Мы стремимся собрать самую актуальную и интересную информацию о музыкальных новинках, классике и событиях.</p>
+                <p align="justify">Мы - команда энтузиастов, увлеченных музыкой не как способом заработка,
+                    а как способом самовыражения и искусством. Наш сайт создан для того,
+                    чтобы делиться знаниями и вдохновением со всеми, кто разделяет нашу страсть.</p>
                 <ul>
                     <li><a href="register.html">Присоединиться к нам</a></li>
                     <li><a href="login.html">Вы уже "музыкарик"</a></li>
@@ -157,8 +146,8 @@
         </div>
         <p class="copyright">&copy; 2025 Мир музыки. Прав у нас нет.</p>
     </footer>
-
     <script src="playlist.js"></script>
     <script src="notifications.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>

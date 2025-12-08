@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const notificationList = document.querySelector('.dropdown-content ul');
     const mockNotifications = [
         { icon: '❗', text: 'Вас упомянули в чате' },
-        { icon: '✉️', text: 'Новое письмо от поддержки' },
         { icon: '🚀', text: 'Система обновлена' },
         { icon: '⚠️', text: 'Попытка входа в аккаунт' }
     ];
