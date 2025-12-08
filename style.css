@@ -662,13 +662,6 @@ header nav ul li a {
     width: auto;
     padding: 5px 10px;
 }
-.feedback-form p label {
-    margin-bottom: 0.5em;
-}
-.feedback-form p input[type="radio"],
-.feedback-form p input[type="checkbox"] {
-    flex-shrink: 0;
-}
 
 /* для адаптивной галереи */
 #instrument-gallery h2 {
